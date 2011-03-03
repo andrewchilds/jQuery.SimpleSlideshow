@@ -10,10 +10,10 @@
  * });
  *
  * <div class="slideshow">
- *   <img src="/path/to/image1.jpg" alt="" />
- *   <img src="/path/to/image2.jpg" alt="" />
- *   <img src="/path/to/image3.jpg" alt="" />
- *   <img src="/path/to/image4.jpg" alt="" />
+ *     <img src="/path/to/image1.jpg" alt="" />
+ *     <img src="/path/to/image2.jpg" alt="" />
+ *     <img src="/path/to/image3.jpg" alt="" />
+ *     <img src="/path/to/image4.jpg" alt="" />
  * </div>
  */
 ;(function($) {
@@ -27,24 +27,30 @@
         if (options) $.extend(config, options);
 
         this.each(function() {
-            var container = $(this);
-            container.css({ position: 'relative', zIndex: config.z });
-            $('img', container).hide();
-            $('img:first', container).show();
-            var cycle = function() {
-                var next = $('img:visible', container).next('img');
+            var $container = $(this);
+
+            function init() {
+                $container.css({ position: 'relative', zIndex: config.zIndex });
+                $('img', $container).hide();
+                $('img:first', $container).show();
+            }
+
+            function cycle() {
+                var next = $('img:visible', $container).next('img');
                 if (!next.length) {
-                    next = $('img:first', container);
+                    next = $('img:first', $container);
                 }
-                $('img', container).css({ zIndex: config.zIndex });
-                var old = $('img:visible', container);
-                next.css({ position: 'absolute', top: '0px', zIndex: config.zIndex + 1 }).fadeIn(config.fadeSpeed, function() {
+                $('img', $container).css({ zIndex: config.zIndex });
+                var old = $('img:visible', $container);
+                next.css({ position: 'absolute', left: 0, top: 0, zIndex: config.zIndex + 1 }).fadeIn(config.fadeSpeed, function() {
                     old.hide();
                     $(this).css({ position: 'static' });
                 });
-                setTimeout(cycle, config.cycleSpeed);
             };
-            setTimeout(cycle, config.cycleSpeed);
+
+            init();
+            setInterval(cycle, config.cycleSpeed);
+
         });
 
         return this;
