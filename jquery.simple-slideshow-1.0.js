@@ -55,7 +55,7 @@
                             old.hide();
                             $(this).css({ position: 'static' });
                         });
-            };
+            }
 
             init();
             setInterval(cycle, config.cycleSpeed);
