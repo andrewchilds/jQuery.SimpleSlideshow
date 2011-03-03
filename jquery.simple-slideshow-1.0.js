@@ -50,10 +50,11 @@
                 }
                 $('img', $container).css({ zIndex: config.zIndex });
                 var old = $('img:visible', $container);
-                next.css({ position: 'absolute', left: 0, top: 0, zIndex: config.zIndex + 1 }).fadeIn(config.fadeSpeed, function() {
-                    old.hide();
-                    $(this).css({ position: 'static' });
-                });
+                next.css({ position: 'absolute', left: 0, top: 0, zIndex: config.zIndex + 1 })
+                        .fadeIn(config.fadeSpeed, function() {
+                            old.hide();
+                            $(this).css({ position: 'static' });
+                        });
             };
 
             init();
