@@ -15,6 +15,14 @@
  *     <img src="/path/to/image3.jpg" alt="" />
  *     <img src="/path/to/image4.jpg" alt="" />
  * </div>
+ *
+ * With Custom Settings:
+ *
+ * $(function() {
+ *     var options = { cycleSpeed: 3000, fadeSpeed: 200 };
+ *     $('.slideshow').simpleSlideshow(options);
+ * });
+ *
  */
 ;(function($) {
     $.fn.simpleSlideshow = function(options) {
