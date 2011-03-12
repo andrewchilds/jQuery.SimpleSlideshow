@@ -3,6 +3,9 @@
  *
  * Copyright (c) 2010 Andrew Childs
  *
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ *
  * Example Usage:
  *
  * $(function() {
