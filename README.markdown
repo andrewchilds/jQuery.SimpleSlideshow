@@ -1,6 +1,6 @@
 # simpleSlideshow
 
-A simple and easy-to-use crossfading slideshow plugin for jQuery. Simply dump a bunch of images into a container element and call simpleSlideshow() on it.
+A simple slideshow plugin for jQuery. To use, dump your slides into a container element and call simpleSlideshow() on it. Done!
 
 ## Example Usage:
 
@@ -9,10 +9,23 @@ A simple and easy-to-use crossfading slideshow plugin for jQuery. Simply dump a 
     });
 
     <div class="slideshow">
-        <img src="/path/to/image1.jpg" alt="" />
+
+        <!-- Slide #1 -->
+        <a href="#"><img src="/path/to/image1.jpg" alt="" /></a>
+
+        <!-- Slide #2 -->
         <img src="/path/to/image2.jpg" alt="" />
-        <img src="/path/to/image3.jpg" alt="" />
+
+        <!-- Slide #3 -->
+        <div>
+            <h1>You could include complex DOM structures too</h1>
+            <p><img src="/path/to/image3.jpg" alt="" /></p>
+            <p>Here is some text</p>
+        </div>
+
+        <!-- Slide #4 -->
         <img src="/path/to/image4.jpg" alt="" />
+
     </div>
 
 ## Demo
